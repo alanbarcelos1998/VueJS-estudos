@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 1 Vue</title>
+    <script src="./vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+       <a href="https://jorgesantana.net.br" targer="_blank" v-on:click="prevenirComportamentoPadrao($event)">
+           Link
+       </a>
+       <br>
+       Mensagem: {{ msg }}
+       <hr>
+       <button @click.once="executarUmaVez()">Botão</button>
+       <p>Cliques: {{ cliques }} </p>
+       <hr>
+       <input type="text" @keyup.Shift.Enter="capturandoTeclas($event)">
+       <p>Teclas: {{ teclas }}</p>
+    </div>
+
+    <script>
+ 
+        new Vue({
+            el: '#app',
+            data: { // variáveis/atributos reativos
+               msg:'',
+               cliques: 0,
+               teclas: ''
+            },
+            methods: {
+                prevenirComportamentoPadrao(e){
+                    e.preventDefault()
+                    this.msg = 'Comportamento padrão ativado'
+                },
+                executarUmaVez(){
+                    this.cliques++
+                },
+                capturandoTeclas(e){
+                    this.teclas = 'Modificadores encadeados com sucesso!'
+                }
+            }
+            
+        })
+
+    </script>
+</body>
+</html>

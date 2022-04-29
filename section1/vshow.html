@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 1 Vue</title>
+    <script src="./vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p @mouseover="exibirTextoAjuda = true" @mouseout="exibirTextoAjuda = false">Exemplo tooltip</p>
+        <div v-show="exibirTextoAjuda">
+            <h3>Título texto ajuda</h3>
+            <p>Contendo texto ajuda</p>
+            <p></p>
+        </div>
+    </div>
+
+    <script>
+ 
+        new Vue({
+            el: '#app',
+            data: { // variáveis/atributos reativos
+               exibirTextoAjuda: false
+            },
+            
+        })
+
+    </script>
+</body>
+</html>

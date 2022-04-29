@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>V-bind</title>
+    <script src="./vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <a v-bind:href="site">site</a>
+        <p :class="cor" class="negrito">Cor da diretiva</p>
+    </div>
+
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                site: "google.com",
+                cor: "Vermelho"
+            }
+        })
+    </script>
+</body>
+</html>
